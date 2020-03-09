@@ -1,4 +1,8 @@
 <div class="container my-5">
+  <% flash.each do |msg_type, msg| %>
+    <div class="alert alert-<%= msg_type %>"><%= msg %></div>
+  <% end %>
+  
   <%= @user.name %>
   <br>
   <%= @user.email %>
