@@ -1,12 +1,12 @@
 # README
-[SEしてるけど実はあんまりコード書いたことないんだよねって人に捧ぐ、Rails on Dockerハンズオン vol.3 - Scaffold, RESTful, MVC - - Qiita](https://qiita.com/at-946/items/33f096baf143602003da)完了時点のソースコードです。
+[SEしてるけど実はあんまりコード書いたことないんだよねって人に捧ぐ、Rails on Dockerハンズオン vol.5 - Model and CRUD - - Qiita](https://qiita.com/at-946/items/2daa58856fc0bf6a0747)完了時点のソースコードです。
 
 # How to use
 ## Ready
 1. GitHubからソースコードをクローンする。
 
 ```
-$ git clone -b vol.3 git@github.com:at946/rails_on_docker_handson.git
+$ git clone -b vol.5 git@github.com:at946/rails_on_docker_handson.git
 ```
 
 2. Dockerイメージをビルドする。
