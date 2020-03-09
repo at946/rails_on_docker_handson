@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :redirect_to_profile_if_signed_in, only: [:new, :create]
+
   def show
     @user = User.find(params[:id])
   end
@@ -10,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      sign_in @user
       flash[:success] = "サインアップありがとう！"
       redirect_to @user
     else

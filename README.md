@@ -1,12 +1,12 @@
 # README
-[SEしてるけど実はあんまりコード書いたことないんだよねって人に捧ぐ、Rails on Dockerハンズオン vol.8 - Sign up - - Qiita](https://qiita.com/at-946/items/e38d94b1f7236e8ed0fe)完了時点のソースコードです。
+[SEしてるけど実はあんまりコード書いたことないんだよねって人に捧ぐ、Rails on Dockerハンズオン vol.9 - Sign in - - Qiita](https://qiita.com/at-946/items/59b46a1626f5cfbf64a4)完了時点のソースコードです。
 
 # How to use
 ## Ready
 1. GitHubからソースコードをクローンする。
 
 ```
-$ git clone -b vol.8 git@github.com:at946/rails_on_docker_handson.git
+$ git clone -b vol.9 git@github.com:at946/rails_on_docker_handson.git
 ```
 
 2. Dockerイメージをビルドする。
