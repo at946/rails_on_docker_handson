@@ -1,0 +1,13 @@
+@import 'bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
+
+body {
+  font-family: 'Noto Sans JP', sans-serif!important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
