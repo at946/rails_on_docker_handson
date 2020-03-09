@@ -9,21 +9,32 @@ WORKDIR $HOME
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache \
-      gcc \
-      g++ \
-      less \
-      libc-dev \
-      libxml2-dev \
-      linux-headers \
-      make \
-      nodejs \
-      postgresql \
-      postgresql-dev \
-      tzdata \
-      yarn && \
+        gcc \
+        g++ \
+        less \
+        libc-dev \
+        libxml2-dev \
+        linux-headers \
+        make \
+        nodejs \
+        postgresql \
+        postgresql-dev \
+        tzdata \
+        yarn && \
+    apk add --no-cache \
+        chromium \
+        chromium-chromedriver \
+        dbus \
+        mesa-dri-swrast \
+        ttf-freefont \
+        udev \
+        wait4ports \
+        xorg-server \
+        xvfb \
+        zlib-dev && \
     apk add --virtual build-packs --no-cache \
-      build-base \
-      curl-dev
+        build-base \
+        curl-dev
 
 COPY Gemfile $HOME
 COPY Gemfile.lock $HOME
