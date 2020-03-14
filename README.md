@@ -1,5 +1,5 @@
 # README
-[コーディング未経験のPO/PdMのためのRails on Dockerハンズオン vol.10 - TDD & Test Automation - - Qiita](https://qiita.com/at-946/items/b774f1d7eac7d118c408)完了時点のソースコードです。
+[SEしてるけど実はあんまりコード書いたことないんだよねって人に捧ぐ、Rails on Dockerハンズオン vol.11 - Test coding - - Qiita](https://qiita.com/at-946/items/42769b7a0d21895a1ab6)完了時点のソースコードです。
 
 # How to use
 ## Ready
