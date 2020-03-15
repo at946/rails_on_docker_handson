@@ -1,5 +1,5 @@
 # README
-[SEしてるけど実はあんまりコード書いたことないんだよねって人に捧ぐ、Rails on Dockerハンズオン vol.5 - Model and CRUD - - Qiita](https://qiita.com/at-946/items/2daa58856fc0bf6a0747)完了時点のソースコードです。
+[コーディング未経験のPO/PdMのためのRails on Dockerハンズオン vol.5 - Model and CRUD - - Qiita](https://qiita.com/at-946/items/2daa58856fc0bf6a0747)完了時点のソースコードです。
 
 # How to use
 ## Ready
