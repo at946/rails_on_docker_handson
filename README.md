@@ -1,5 +1,5 @@
 # README
-[SEしてるけど実はあんまりコード書いたことないんだよねって人に捧ぐ、Rails on Dockerハンズオン vol.6 - Model validation - - Qiita](https://qiita.com/at-946/items/f83dbdf12d2b286d88b7)完了時点のソースコードです。
+[コーディング未経験のPO/PdMのためのRails on Dockerハンズオン vol.6 - Model validation - - Qiita](https://qiita.com/at-946/items/f83dbdf12d2b286d88b7)完了時点のソースコードです。
 
 # How to use
 ## Ready
