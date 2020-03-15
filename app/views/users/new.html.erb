@@ -30,10 +30,10 @@
     </div>
 
     <div class="form-group mt-5">
-      <%= form.submit "Sign up!", class: "form-control btn btn-primary" %>
+      <%= form.submit "Sign up!", class: "form-control btn btn-primary", id: :sign_up_button %>
     </div>
   <% end %>
-  <p class="text-center">登録済みの方は<%= link_to "こちら", sign_in_path %></p>
+  <p class="text-center">登録済みの方は<%= link_to "こちら", sign_in_path, id: :sign_in_link %></p>
 
 </div>
 

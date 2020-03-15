@@ -13,16 +13,16 @@
   <body>
   <header class="navbar navbar-dark navbar-expand bg-dark">
     <div class="container">
-      <%= link_to "sample app", root_path, class: "navbar-brand" %>
+      <%= link_to "sample app", root_path, class: "navbar-brand", id: :header_logo %>
       <ul class="navbar-nav">
         <% if signed_in? %>
           <%# サインイン済みの場合のリンク %>
-          <li class="nav-item"><%= link_to "Profile", current_user, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Profile", current_user, class: "nav-link", id: :header_profile_link %></li>
+          <li class="nav-item"><%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link", id: :header_sign_out_link %></li>
         <% else %>
           <%# 未サインインの場合のリンク %>
-          <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Sign in", sign_in_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link", id: :header_home_link %></li>
+          <li class="nav-item"><%= link_to "Sign in", sign_in_path, class: "nav-link", id: :header_sign_in_link %></li>
         <% end %>
       </ul>
     </div>
