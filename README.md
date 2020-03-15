@@ -1,5 +1,5 @@
 # README
-[SEしてるけど実はあんまりコード書いたことないんだよねって人に捧ぐ、Rails on Dockerハンズオン vol.7 - Secure password - - Qiita](https://qiita.com/at-946/items/2d682baf5d9aaac56587)完了時点のソースコードです。
+[コーディング未経験のPO/PdMのためのRails on Dockerハンズオン vol.7 - Secure password - - Qiita](https://qiita.com/at-946/items/2d682baf5d9aaac56587)完了時点のソースコードです。
 
 # How to use
 ## Ready
