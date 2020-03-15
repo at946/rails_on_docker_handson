@@ -26,9 +26,7 @@ $ docker-compose run --rm web yarn install --check-files
 
 ```
 $ docker-compose run --rm web rails db:create
-$ docker-compose run --rm web rails db:migrate
 ```
-※vol.2時点ではマイグレーションファイルを生成していないため`db:migrate`は不要。
 
 ## コンテナ起動
 ```
