@@ -1,5 +1,5 @@
 # README
-[SEしてるけど実はあんまりコード書いたことないんだよねって人に捧ぐ、Rails on Dockerハンズオン vol.3 - Scaffold, RESTful, MVC - - Qiita](https://qiita.com/at-946/items/33f096baf143602003da)完了時点のソースコードです。
+[コーディング未経験のPO/PdMのためのRails on Dockerハンズオン vol.3 - Scaffold, RESTful, MVC - - Qiita](https://qiita.com/at-946/items/33f096baf143602003da)完了時点のソースコードです。
 
 # How to use
 ## Ready
