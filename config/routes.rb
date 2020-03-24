@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get     '/sign_in',   to: 'sessions#new',     as: :sign_in
   post    '/sign_in',   to: 'sessions#create',  as: :create_session
   delete  '/sign_out',  to: 'sessions#destroy', as: :sign_out
+  
+  get '/posts', to: 'posts#index', as: :posts
 end

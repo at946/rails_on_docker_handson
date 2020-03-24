@@ -2,6 +2,8 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
   has_secure_password validations: false
 
+  has_many :posts
+
   validates :name,
     presence: true,
     length: { maximum: 50 }

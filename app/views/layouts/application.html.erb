@@ -17,6 +17,7 @@
       <ul class="navbar-nav">
         <% if signed_in? %>
           <%# サインイン済みの場合のリンク %>
+          <li class="nav-item"><%= link_to "Posts", posts_path, class: "nav-link", id: :header_posts_link %></li>
           <li class="nav-item"><%= link_to "Profile", current_user, class: "nav-link", id: :header_profile_link %></li>
           <li class="nav-item"><%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link", id: :header_sign_out_link %></li>
         <% else %>

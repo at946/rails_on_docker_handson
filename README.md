@@ -1,12 +1,12 @@
 # README
-[コーディング未経験のPO/PdMのためのRails on Dockerハンズオン vol.11 - Test coding - - Qiita](https://qiita.com/at-946/items/42769b7a0d21895a1ab6)完了時点のソースコードです。
+[コーディング未経験のPO/PdMのためのRails on Dockerハンズオン、Rails on Dockerハンズオン vol.12 - TDDでPost機能をコーディング part1 - - Qiita](https://qiita.com/at-946/items/a0a889ced9fea4c4d0a6)完了時点のソースコードです。
 
 # How to use
 ## Ready
 1. GitHubからソースコードをクローンする。
 
 ```
-$ git clone -b vol.11 git@github.com:at946/rails_on_docker_handson.git
+$ git clone -b vol.12 git@github.com:at946/rails_on_docker_handson.git
 ```
 
 2. Dockerイメージをビルドする。
