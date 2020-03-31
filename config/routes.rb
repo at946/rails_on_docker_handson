@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   post    '/sign_in',   to: 'sessions#create',  as: :create_session
   delete  '/sign_out',  to: 'sessions#destroy', as: :sign_out
   
-  get '/posts', to: 'posts#index', as: :posts
+  get   '/posts', to: 'posts#index',  as: :posts
+  post  '/posts', to: 'posts#create', as: :create_post
 end
