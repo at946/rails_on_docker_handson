@@ -20,13 +20,6 @@
   <% end %>
 
   <div id="posts_list" class="my-5">
-    <% @posts.each do |post| %>
-      <div class="card post-item my-1">
-        <div class="card-body">
-          <h5 class="card-title"><%= link_to post.user.name, post.user, class: "post-user-name" %></h5>
-          <p class="card-text"><%= safe_join(post.content.split("\n"), tag(:br)) %></p>
-        </div>
-      </div>
-    <% end %>
+    <%= render partial: "posts_list", locals: { posts: @posts } %>
   </div>
 </div>

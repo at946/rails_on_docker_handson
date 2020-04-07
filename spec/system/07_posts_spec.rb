@@ -224,4 +224,159 @@ feature "ユーザーとして、ポストを投稿したい", type: :system do
       expect(current_path).to eq user_path(post.user)
     end
   end
+
+  scenario "未サインインのユーザーは、ユーザー詳細ページでそのユーザーのポストを投稿日時降順で閲覧できること" do
+    # テスト用のユーザーを作成する
+    user1 = create_user(1)
+    user2 = create_user(2)
+    # ポストを用意する
+    posts1 = []
+    posts1.unshift Post.create(content: "First Post!!", user: user1)
+    posts1.unshift Post.create(content: "Second Post!!", user: user1)
+    posts2 = []
+    posts2.unshift Post.create(content: "初めてのポスト", user: user2)
+    posts2.unshift Post.create(content: "２回目のポスト", user: user2)
+    
+    # user1のユーザー詳細ページにアクセスする
+    visit user_path(user1)
+    
+    # user1のポストが投稿日時降順で表示されていることを検証する
+    posts1.each_with_index do |post, i|
+      expect(find("#posts_list").all(".post-item")[i]).to have_text post.user.name
+      expect(find("#posts_list").all(".post-item")[i]).to have_text post.content
+    end
+    # user2のポストは表示されないことを検証する
+    posts2.each do |post|
+      expect(page).not_to have_text post.user.name
+      expect(page).not_to have_text post.content
+    end
+    
+    # user2のユーザー詳細ページにアクセスする
+    visit user_path(user2)
+    
+    # user2のポストが投稿日時降順で表示されていることを検証する
+    posts2.each_with_index do |post, i|
+      expect(find("#posts_list").all(".post-item")[i]).to have_text post.user.name
+      expect(find("#posts_list").all(".post-item")[i]).to have_text post.content
+    end
+    # user1のポストは表示されないことを検証する
+    posts1.each do |post|
+      expect(page).not_to have_text post.user.name
+      expect(page).not_to have_text post.content
+    end
+  end        
+
+  scenario "未サインインのユーザーが、ユーザー詳細ページでそのユーザーのポストのユーザー名をクリックしたとき、何も起こらないこと" do
+    # テスト用のユーザーを作成する
+    user = create_user(1)
+    # テスト用のポストを作成する
+    posts = []
+    posts.unshift Post.create(content: "First Post!!", user: user)
+    posts.unshift Post.create(content: "Second Post!!", user: user) 
+    
+    # userのユーザー詳細ページにアクセスする
+    visit user_path(user)
+    
+    # ポストのユーザー名がリンクになっていないことを検証する
+    posts.each_with_index do |post, i|
+      expect(find("#posts_list").all(".post-item")[i]).not_to have_selector("a.post-user-name")
+    end
+  end
+
+  scenario "サインイン済のユーザーは、ユーザー詳細ページでそのユーザーのポストを投稿日時降順で閲覧できること" do
+    # テスト用のユーザーを作成する
+    user1 = create_user(1)
+    user2 = create_user(2)
+    # ポストを用意する
+    posts1 = []
+    posts1.unshift Post.create(content: "First Post!!", user: user1)
+    posts1.unshift Post.create(content: "Second Post!!", user: user1)
+    posts2 = []
+    posts2.unshift Post.create(content: "初めてのポスト", user: user2)
+    posts2.unshift Post.create(content: "２回目のポスト", user: user2)
+    # user1でサインインする
+    sign_in(user1)
+    
+    # user2のユーザー詳細ページにアクセスする
+    visit user_path(user2)
+    
+    # user2のポストが投稿日時降順で表示されていることを検証する
+    posts2.each_with_index do |post, i|
+      expect(find("#posts_list").all(".post-item")[i]).to have_text post.user.name
+      expect(find("#posts_list").all(".post-item")[i]).to have_text post.content
+    end
+    # user1のポストは表示されないことを検証する
+    posts1.each do |post|
+      expect(page).not_to have_text post.user.name
+      expect(page).not_to have_text post.content
+    end
+  end
+
+  scenario "サインイン済のユーザーが、ユーザー詳細ページでそのユーザーのポストのユーザー名をクリックしたとき、何も起こらないこと" do
+    # テスト用のユーザーを作成する
+    user1 = create_user(1)
+    user2 = create_user(2)
+    # テスト用のポストを作成する
+    posts = []
+    posts.unshift Post.create(content: "First Post!!", user: user2)
+    posts.unshift Post.create(content: "Second Post!!", user: user2) 
+    # user1でサインインする
+    sign_in(user1)
+  
+    # user2のユーザー詳細ページにアクセスする
+    visit user_path(user2)
+  
+    # ポストのユーザー名がリンクになっていないことを検証する
+    posts.each_with_index do |post, i|
+      expect(find("#posts_list").all(".post-item")[i]).not_to have_selector("a.post-user-name")
+    end
+  end
+
+  scenario "サインイン済のユーザーは、プロフィールページで自身のポストを投稿日時降順で閲覧できること" do
+    # テスト用のユーザーを作成する
+    user1 = create_user(1)
+    user2 = create_user(2)
+    # ポストを用意する
+    posts1 = []
+    posts1.unshift Post.create(content: "First Post!!", user: user1)
+    posts1.unshift Post.create(content: "Second Post!!", user: user1)
+    posts2 = []
+    posts2.unshift Post.create(content: "初めてのポスト", user: user2)
+    posts2.unshift Post.create(content: "２回目のポスト", user: user2)
+    # user1でサインインする
+    sign_in(user1)
+  
+    # user1のプロフィールページにアクセスする
+    visit user_path(user1)
+  
+    # user1のポストが投稿日時降順で表示されていることを検証する
+    posts1.each_with_index do |post, i|
+      expect(find("#posts_list").all(".post-item")[i]).to have_text post.user.name
+      expect(find("#posts_list").all(".post-item")[i]).to have_text post.content
+    end
+    # user2のポストは表示されないことを検証する
+    posts2.each do |post|
+      expect(page).not_to have_text post.user.name
+      expect(page).not_to have_text post.content
+    end
+  end
+
+  scenario "サインイン済のユーザーが、プロフィールページでそのユーザーのポストのユーザー名をクリックしたとき、何も起こらないこと" do
+    # テスト用のユーザーを作成する
+    user = create_user(1)
+    # テスト用のポストを作成する
+    posts = []
+    posts.unshift Post.create(content: "First Post!!", user: user)
+    posts.unshift Post.create(content: "Second Post!!", user: user) 
+    # user1でサインインする
+    sign_in(user)
+  
+    # user1のプロフィールページにアクセスする
+    visit user_path(user)
+
+    # ポストのユーザー名がリンクになっていないことを検証する
+    posts.each_with_index do |post, i|
+      expect(find("#posts_list").all(".post-item")[i]).not_to have_selector("a.post-user-name")
+    end
+  end
 end

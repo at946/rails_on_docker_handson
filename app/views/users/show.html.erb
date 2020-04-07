@@ -6,4 +6,8 @@
   <%= @user.name %>
   <br>
   <%= @user.email %>
+
+  <div id="posts_list" class="my-5">
+    <%= render partial: "posts/posts_list", locals: { posts: @user.posts.order(created_at: :desc) } %>
+  </div>
 </div>
