@@ -6,7 +6,7 @@
 1. GitHubからソースコードをクローンする。
 
 ```
-$ git clone -b vol.08 git@github.com:at946/rails_on_docker_handson.git
+$ git clone -b vol.08 https://github.com/at946/rails_on_docker_handson.git
 ```
 
 2. Dockerイメージをビルドする。
