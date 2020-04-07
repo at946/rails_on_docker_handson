@@ -1,5 +1,5 @@
 # README
-[コーディング未経験のPO/PdMのためのRails on Dockerハンズオン、Rails on Dockerハンズオン vol.13 - TDDでPost機能をコーディング part2 - - Qiita](https://qiita.com/at-946/items/ff66e73ca8750c9a8790)完了時点のソースコードです。
+[コーディング未経験のPO/PdMのためのRails on Dockerハンズオン、Rails on Dockerハンズオン vol.14 - TDDでPost機能をコーディング part3 - - Qiita](https://qiita.com/at-946/items/4ece03fb9a9887abadef)完了時点のソースコードです。
 
 # How to use
 ## Ready
