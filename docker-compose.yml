@@ -1,20 +1,33 @@
-version: '3'
+  version: "3.7"
 
-services:
-  db:
-    image: postgres:12.1-alpine
-    environment:
-      - TZ=Asia/Tokyo
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+  services:
+    db:
+      image: postgres:12.1-alpine
+      environment:
+        - TZ=Asia/Tokyo
+      volumes:
+        - ./rails/tmp/db:/var/lib/postgresql/data
 
-  web:
-    build: .
-    volumes:
-      - .:/app
-    ports:
-      - 3000:3000
-    depends_on:
-      - db
-    environment:
-      - RAILS_SYSTEM_TESTING_SCREENSHOT=inline
+    web:
+      build: rails/
+      volumes:
+        - ./rails:/app
+      ports:
+        - 3000:3000
+      depends_on:
+        - db
+      environment:
+        - RAILS_SYSTEM_TESTING_SCREENSHOT=inline
+
+    deploy:
+      build: deploy/
+      environment:
+        - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+        - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+        - AWS_DEFAULT_REGION=ap-southeast-1
+        - KUBECONFIG=/workspace/k8s/.kube/config
+      volumes:
+        - ./rails:/workspace/rails
+        - ./deploy/k8s:/workspace/k8s
+        - ./deploy/terraform:/workspace/terraform
+      privileged: true

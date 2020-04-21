@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rails-db-setup
+spec:
+  template:
+    metadata:
+      name: rails-db-setup
+    spec:
+      containers:
+      - name: rails-db-setup
+        image: [RepositoryUri]:1.0.0
+        imagePullPolicy: Always
+        command: ["ash"]
+        args: ["-c", "bundle exec rails db:create && bundle exec rails db:migrate"]
+        envFrom:
+        - configMapRef:
+            name: rails-config
+      restartPolicy: Never
+  backoffLimit: 1

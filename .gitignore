@@ -1,20 +1,22 @@
-.ash_history
-.browserslistrc
-.bundle/
+*/.ash_history
+*/.browserslistrc
 .git/
-.local/
-node_modules/
-log/
-tmp/
-yarn-error.log
+rails/.bundle/
+rails/.local/
+rails/node_modules/
+rails/log/
+rails/tmp/
+rails/yarn-error.log
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+rails/config/master.key
 
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
-.pki/
+rails/public/packs
+rails/public/packs-test
+rails/yarn-debug.log*
+rails/.yarn-integrity
+rails/.pki/
+
+deploy/k8s/.kube
+deploy/terraform/.terraform
+deploy/terraform/terraform.*

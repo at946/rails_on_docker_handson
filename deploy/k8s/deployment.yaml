@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rails-deployment
+  labels:
+    app: rails
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rails
+  template:
+    metadata:
+      labels:
+        app: rails
+    spec:
+      containers:
+      - name: rails
+        image: [RepositoryUri]:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: rails-config
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rails-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: rails
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000

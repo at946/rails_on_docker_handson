@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rails-config
+data:
+  RAILS_ENV: production
+  RAILS_SERVE_STATIC_FILES: "true"
+  APP_DATABASE_HOST: [RDSのエンドポイント名]
+  APP_DATABASE_DATABASE: app_production
+  APP_DATABASE_USERNAME: handson_user
+  APP_DATABASE_PASSWORD: handson2020

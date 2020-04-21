@@ -12,14 +12,8 @@ $ git clone -b vol.14 https://github.com/at946/rails_on_docker_handson.git
 2. Dockerイメージをビルドする。
 
 ```
-$ cd rails_on_docker_handson
+$ cd rails_on_docker_handson/rails
 $ docker-compose build
-```
-
-3. Yarnをインストールする
-
-```
-$ docker-compose run --rm web yarn install --check-files
 ```
 
 4. DBを作成し、マイグレーションを適用する。

@@ -1,0 +1,8 @@
+.local
+.pki
+log
+node_modules
+spec
+tmp
+.rspec
+yarn-error.log
